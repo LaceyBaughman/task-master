@@ -44,12 +44,12 @@ export class List {
             </div>
 
             <!-- SECTION TASKS FORM  -->
-            <form class="px-3 pb-2" onsubmit="app.toppingsController.createTask('${this.id}')">
+            <form class="px-3 pb-2" onsubmit="app.tasksController.createTask('${this.id}')">
               <div class="input-group">
                 <input maxlength="50" type="text" class="form-control" placeholder="Add Task..." aria-label="Add Task"
-                  aria-describedby="topping" id="name">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
-                    class="mdi mdi-plus"></i></button>
+                  aria-describedby="task" name="name" id="name">
+                <button class="btn btn-outline-secondary" id="button-addon2"><i
+                    class="mdi mdi-plus" ></i></button>
               </div>
             </form>
 
@@ -58,12 +58,14 @@ export class List {
       
     `
   }
-}
 
-get TasksTemplate() {
-  let template = ''
-  const myToppings = ProxyState.tasks.filter(t => t.listId == this.id)
-  myToppings.forEach(t => template += t.Template)
-  return template
+  // onsubmit="app.tasksController.createTask('${this.id}')"
 
+  get TasksTemplate() {
+    let template = ''
+    const myTasks = ProxyState.tasks.filter(t => t.listId == this.id)
+    myTasks.forEach(t => template += t.Template)
+    return template
+
+  }
 }

@@ -4,20 +4,22 @@ import { Pop } from "../Utils/Pop.js"
 export class TasksController {
   createTask(listId) {
     window.event.preventDefault()
-    const form = window.event.target
+    let form = window.event.target
 
-    const newList = {
-      listId,
+    let newTask = {
+      listId: listId,
       name: form.name.value
     }
-    console.log("[TasksController]: createTask", newTask)
+    console.log('task create controller')
     tasksService.createTask(newTask)
   }
 
-  async deleteTask(id) {
-    // NOTE CONFIRM DELETE
+
+  async deleteTask(taskId) {
+    console.log('delete task', taskId);
+    tasksService.deleteTask(taskId)
     if (await Pop.confirm()) {
-      tasksService.deleteTask(id)
+      tasksService.deleteTask(taskId)
     }
   }
 }
