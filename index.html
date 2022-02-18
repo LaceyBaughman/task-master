@@ -46,9 +46,7 @@
 
   <header>
     <nav class="navbar navbar-expand no-select">
-      <a class="navbar-brand ms-3" href="#">
-        <span class="ms-2 text-center">Task Master</span>
-      </a>
+      <h1 class="my-3 text-center">Task Master</h1>
     </nav>
   </header>
 
@@ -66,20 +64,64 @@
               class="form-control" placeholder="List Name...">
           </div>
           <div class="col-md-3 m-2 d-flex">
-            <label for="" class="form-label m-2">Color</label><input required maxlength="50" type="color"
-              class="form-control m-2" name="color" id="color" aria-describedby="helpId" placeholder="">
+            <label for="" class="form-label m-2">Color</label><input required type="color" class="form-control m-2"
+              name="color" id="color" aria-describedby="helpId" placeholder="">
           </div>
           <div class="col-md-2 m-2">
             <button class="btn btn-success mx-2">Create</button>
           </div>
         </form>
-
-        <!-- END SECTION CreateList -->
-
-
-
-
       </div>
+
+      <!-- SECTION CardList Template -->
+      <div class="row">
+        <div class="col-md-4 p-3">
+          <div class="rounded shadow bg-white">
+
+            <div class="rounded-top text-center p-2 ${this.color}">
+              <h4 class="m-4 justify-content-between">
+                ${this.name.toUpperCase()}
+                <i class="mdi mdi-delete selectable" title="delete task"
+                  onclick="app.pizzasController.deleteList('${this.id}')"></i>
+              </h4>
+            </div>
+
+            <div class="m-4">
+
+              <div class="form-check mx-4">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Default checkbox
+                </label>
+
+              </div>
+              <div class="form-check mx-4">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                  Checked checkbox
+                </label>
+              </div>
+
+            </div>
+
+            <!-- SECTION TASKS FORM  -->
+            <form class="px-3 pb-2" onsubmit="app.toppingsController.createTask('${this.id}')">
+              <div class="input-group">
+                <input maxlength="50" type="text" class="form-control" placeholder="Add Task..." aria-label="Add Task"
+                  aria-describedby="topping" id="name">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                    class="mdi mdi-plus"></i></button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
     </div>
     <div class="row" id="cardList">
       <!-- STUB CardList TEMPLATEs GO HERE -->

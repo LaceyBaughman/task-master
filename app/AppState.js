@@ -3,7 +3,7 @@ import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
   /** @type {import('./Models/List').Value[]} */
-  values = []
+  lists = []
 }
 
 export const ProxyState = new Proxy(new AppState(), {
@@ -18,4 +18,3 @@ export const ProxyState = new Proxy(new AppState(), {
     return true
   }
 })
-

@@ -1,18 +1,18 @@
 import { ProxyState } from "../AppState.js";
-import { valuesService } from "../Services/ListService.js";
+import { ListsService } from "../Services/ListsService.js";
 import { Pop } from "../Utils/Pop.js";
 
 
 //Private
 function _draw() {
-  let values = ProxyState.values;
-  let cardsTemplate = ''
-  values.forEach(v => cardsTemplate += v.CardTemplate)
+  let lists = ProxyState.lists;
+  let listsTemplate = ''
+  lists.forEach(v => listsTemplate += v.CardTemplate)
   document.getElementById("app").innerHTML = /*html*/`
   <div class="my-3">
-    <button class="btn btn-secondary text-white elevation-2" onclick="app.valuesController.addValue()">Add Value</button>  
-    <div class="values d-flex flex-wrap my-3">
-      ${cardsTemplate}
+    <button class="btn btn-secondary text-white elevation-2" onclick="app.listsController.addValue()">Add Value</button>  
+    <div class="lists d-flex flex-wrap my-3">
+      ${listsTemplate}
     </div>
   </div>
   `
@@ -21,7 +21,7 @@ function _draw() {
 //Public
 export class ValuesController {
   constructor() {
-    ProxyState.on("values", _draw);
+    ProxyState.on("list", _draw);
     _draw()
   }
 
@@ -29,10 +29,10 @@ export class ValuesController {
     valuesService.addValue()
   }
 
-  async removeValue(id) {
+  async removeList(id) {
     const yes = await Pop.confirm('Remove Value')
     if (yes) {
-      valuesService.removeValue(id)
+      valuesService.removeList(id)
     }
   }
 
