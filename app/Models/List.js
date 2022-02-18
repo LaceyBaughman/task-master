@@ -1,5 +1,4 @@
 import { generateId } from "../Utils/generateId.js"
-import { ProxyState } from "../AppState.js"
 
 export class List {
   constructor(data) {
