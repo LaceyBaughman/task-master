@@ -16,11 +16,11 @@ export class List {
           <div class="rounded shadow bg-white">
 
             <div class="rounded-top text-center py-5 ${this.color}">
-              <h4 class="m-4 justify-content-between">
+              <h1 class="m-4 justify-content-between">
                 ${this.name.toUpperCase()}
                 <i class="mdi mdi-delete selectable" title="delete task"
-                  onclick="app.pizzasController.deleteList('${this.id}')"></i>
-              </h4>
+                  onclick="app.ListsController.deleteList('${this.id}')"></i>
+              </h1>
             </div>
 
             <!-- SECTION Tasks List -->
@@ -32,7 +32,7 @@ export class List {
                   Default checkbox
                 </label>
                 <i class="mdi mdi-delete selectable" title="delete task"
-                  onclick="app.pizzasController.deleteList('${this.id}')"></i>
+                  onclick="app.ListsController.deleteList('${this.id}')"></i>
               </div>
 
               <div class="form-check mx-4 justify-content-between">
@@ -41,7 +41,7 @@ export class List {
                   Checked checkbox
                 </label>
                 <i class="mdi mdi-delete selectable" title="delete task"
-                  onclick="app.pizzasController.deleteList('${this.id}')"></i>
+                  onclick="app.ListsController.deleteList('${this.id}')"></i>
               </div>
 
             </div>
