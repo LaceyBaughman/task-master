@@ -1,4 +1,5 @@
 import { generateId } from "../Utils/generateId.js"
+import { ProxyState } from "../AppState.js"
 
 export class List {
   constructor(data) {
@@ -31,16 +32,13 @@ export class List {
                   Default checkbox
                 </label>
                 <i class="mdi mdi-delete selectable" title="delete task"
-                  onclick="app.ListsController.deleteList('${this.id}')"></i>
+                  onclick="app.listsController.deleteList('${this.id}')"></i>
               </div>
 
-              <div class="form-check mx-4 justify-content-between">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                  Checked checkbox
-                </label>
-                <i class="mdi mdi-delete selectable" title="delete task"
-                  onclick="app.ListsController.deleteList('${this.id}')"></i>
+              <div class="form-check mx-4 justify-content-between" id=>
+                
+              ${this.TasksTemplate}
+
               </div>
 
             </div>
@@ -62,3 +60,10 @@ export class List {
   }
 }
 
+get TasksTemplate() {
+  let template = ''
+  const myToppings = ProxyState.tasks.filter(t => t.listId == this.id)
+  myToppings.forEach(t => template += t.Template)
+  return template
+
+}
