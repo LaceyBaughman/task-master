@@ -57,7 +57,7 @@
 
 
         <!-- SECTION CreateList -->
-        <form class="row align-items-start" onsubmit="app.listController.createList(event)">
+        <form class="row align-items-start" onsubmit="app.listsController.createList()">
 
           <div class="col-md-3 m-2">
             <input required maxlength="20" type="text" name="List Name" id="name" aria-describedby="helpId"
@@ -73,7 +73,7 @@
         </form>
       </div>
 
-      <div class="row" id="cardList">
+      <div class="row" id="list">
         <!-- SECTION CardList Template -->
         <div class="col-md-4 p-3 card-height">
           <div class="rounded shadow bg-white">
@@ -82,7 +82,7 @@
               <h4 class="m-4 justify-content-between">
                 ${this.name.toUpperCase()}
                 <i class="mdi mdi-delete selectable" title="delete task"
-                  onclick="app.pizzasController.deleteList('${this.id}')"></i>
+                  onclick="app.ListsController.deleteList('${this.id}')"></i>
               </h4>
             </div>
             <!-- SECTION Tasks List -->
@@ -94,7 +94,7 @@
                   Default checkbox
                 </label>
                 <i class="mdi mdi-delete selectable" title="delete task"
-                  onclick="app.pizzasController.deleteList('${this.id}')"></i>
+                  onclick="app.ListsController.deleteList('${this.id}')"></i>
               </div>
 
               <div class="form-check mx-4 justify-content-between">
@@ -103,7 +103,7 @@
                   Checked checkbox
                 </label>
                 <i class="mdi mdi-delete selectable" title="delete task"
-                  onclick="app.pizzasController.deleteList('${this.id}')"></i>
+                  onclick="app.ListsController.deleteList('${this.id}')"></i>
               </div>
 
             </div>
