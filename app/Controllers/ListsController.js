@@ -19,20 +19,20 @@ function _draw() {
 }
 
 //Public
-export class ValuesController {
+export class ListsController {
   constructor() {
     ProxyState.on("list", _draw);
     _draw()
   }
 
   addValue() {
-    valuesService.addValue()
+    listsService.addValue()
   }
 
   async removeList(id) {
     const yes = await Pop.confirm('Remove Value')
     if (yes) {
-      valuesService.removeList(id)
+      listsService.removeList(id)
     }
   }
 
