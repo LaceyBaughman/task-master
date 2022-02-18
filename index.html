@@ -2,42 +2,111 @@
 <html lang="en">
 
 <head>
+  <!--Bootstrap-Link-->
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
+    integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+  <!--Google-Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
-  <title>task-master</title>
+  <title>Task Master</title>
+
+  <style>
+    body.debug .container,
+    body.debug .container-fluid {
+      outline: 2px double blue;
+      outline-offset: -2px;
+    }
+
+    body.debug .row {
+      /* padding: 2em; NOTE done with this rule new that we finished the architecture */
+      outline: 2px dashed red;
+      outline-offset: -2px;
+    }
+
+    body.debug [class*="col-"] {
+      min-height: 1vh;
+      outline: 2px dotted forestgreen;
+      outline-offset: -3px;
+    }
+  </style>
+
 </head>
 
-<body>
+<body class="debug">
+
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
+    <nav class="navbar navbar-expand no-select">
       <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ms-2">task-master</span>
+        <span class="ms-2 text-center">Task Master</span>
       </a>
     </nav>
+  </header>
+
   </header>
   <main>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
-        </div>
+
+
+        <!-- SECTION CreateList -->
+        <form class="row align-items-start" onsubmit="app.listController.createList(event)">
+
+          <div class="col-md-3 m-2">
+            <input required maxlength="20" type="text" name="List Name" id="name" aria-describedby="helpId"
+              class="form-control" placeholder="List Name...">
+          </div>
+          <div class="col-md-3 m-2 d-flex">
+            <label for="" class="form-label m-2">Color</label><input required maxlength="50" type="color"
+              class="form-control m-2" name="color" id="color" aria-describedby="helpId" placeholder="">
+          </div>
+          <div class="col-md-2 m-2">
+            <button class="btn btn-success mx-2">Create</button>
+          </div>
+        </form>
+
+        <!-- END SECTION CreateList -->
+
+
+
+
       </div>
     </div>
+    <div class="row" id="cardList">
+      <!-- STUB CardList TEMPLATEs GO HERE -->
+
+
+    </div>
+    </div>
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
   </main>
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
-      <p><small>Made with 💖 by Codeworks</small></p>
+      <p><small>Made with 💖 by Lacey at Codeworks</small></p>
     </div>
   </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>
