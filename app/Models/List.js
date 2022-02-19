@@ -19,7 +19,7 @@ export class List {
               <h1 class="m-4 justify-content-between">
                 ${this.name.toUpperCase()}
                 <i class="mdi mdi-delete selectable" title="delete task"
-                  onclick="app.ListsController.deleteList('${this.id}')"></i>
+                  onclick="app.listsController.deleteList('${this.id}')"></i>
               </h1>
             </div>
 
@@ -36,14 +36,19 @@ export class List {
             </div>
 
             <!-- SECTION TASKS FORM  -->
-            <form class="px-3 pb-2" onsubmit="app.tasksController.createTask('${this.id}')">
+            <form class="px-3 pb-2" onsubmit="app.tasksController.createTask()">
               <div class="input-group">
-                <input required minlength="3" maxlength="50" type="text" class="form-control" placeholder="Add Task..." aria-label="Add Task"
-                  aria-describedby="task" name="name" id="name">
+                <input required minlength="3" maxlength="50" type="text" name="List Name" id="name" aria-describedby="helpId" class="form-control" placeholder="Add Task..." aria-label="Add Task">
                 <button class="btn btn-outline-secondary" id="button-addon2"><i
                     class="mdi mdi-plus" ></i></button>
               </div>
             </form>
+
+
+
+
+
+
 
           </div>
         </div>

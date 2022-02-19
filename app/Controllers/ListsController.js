@@ -30,7 +30,7 @@ export class ListsController {
     listsService.createList(newList)
   }
 
-  deleteList(listId) {
-    listsService.deleteList.(listID)
-  }
+  // deleteList(id) {
+  //   listsService.deleteList.(id)
+  // }
 }
