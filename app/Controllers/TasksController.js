@@ -10,7 +10,7 @@ export class TasksController {
       listId: listId,
       name: form.name.value
     }
-    console.log('task create controller')
+    console.log('TaskControl: create task.')
     tasksService.createTask(newTask)
   }
 

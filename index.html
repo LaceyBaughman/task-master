@@ -51,17 +51,17 @@
   </header>
 
   </header>
+
+
   <main>
     <div class="container-fluid">
+
+      <!-- SECTION Create List -->
       <div class="row">
-
-
-        <!-- SECTION Create The List -->
         <form class="row align-items-start" onsubmit="app.listsController.createList()">
-
           <div class="col-md-3 m-2">
-            <input required maxlength="20" type="text" name="List Name" id="name" aria-describedby="helpId"
-              class="form-control" placeholder="List Name...">
+            <input required minlength="3" maxlength="15" type="text" name="List Name" id="name"
+              aria-describedby="helpId" class="form-control" placeholder="List Name...">
           </div>
           <div class="col-md-3 m-2 d-flex">
             <label for="" class="form-label m-2">Color</label><input required type="color" class="form-control m-2"
@@ -77,40 +77,13 @@
 
       <div class="row" id="list">
         <!--List Template Injection -->
-
-
-
-
-
-
-
-
-
       </div>
 
     </div>
     </div>
-    <!-- <div class="row" id="cardList">
-
-
-
-    </div>
-    </div> -->
   </main>
 
 
-
-
-
-
-
-
-
-
-
-
-
-  </main>
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
       <p><small>Made with 💖 by Lacey at Codeworks</small></p>
