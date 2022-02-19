@@ -16,7 +16,7 @@ export class Task {
 
    
      <label class="form-check-label" for="flexCheckChecked">${this.name} </label>
-    <i class="mdi mdi-delete selectable" title="delete ${this.name}" onclick="app.ListsController.deleteTask('${this.id}')"></i>
+    <i class="mdi mdi-delete selectable" title="delete ${this.name}" onclick="app.listsController.deleteTask('${this.id}')"></i>
   `
   }
 }

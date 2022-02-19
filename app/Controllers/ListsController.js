@@ -24,13 +24,15 @@ export class ListsController {
     const form = window.event.target
 
     const newList = {
+      // @ts-ignore
       name: form.name.value,
+      // @ts-ignore
       color: form.color.value
     }
     listsService.createList(newList)
   }
 
-  // deleteList(id) {
-  //   listsService.deleteList.(id)
-  // }
+  deleteList(id) {
+    listsService.deleteList(id)
+  }
 }

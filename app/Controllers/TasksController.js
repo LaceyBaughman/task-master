@@ -8,6 +8,7 @@ export class TasksController {
 
     const newTask = {
       listId: listId,
+      // @ts-ignore
       name: form.name.value
     }
     console.log('TaskControl: create task.')
