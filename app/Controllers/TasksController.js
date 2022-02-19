@@ -4,9 +4,9 @@ import { Pop } from "../Utils/Pop.js"
 export class TasksController {
   createTask(listId) {
     window.event.preventDefault()
-    let form = window.event.target
+    const form = window.event.target
 
-    let newTask = {
+    const newTask = {
       listId: listId,
       name: form.name.value
     }
