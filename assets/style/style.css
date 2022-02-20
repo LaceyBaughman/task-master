@@ -1,1 +1,6 @@
 /* BASIC STYLES HERE */
+
+
+.strikethrough:checked + span{
+  text-decoration:line-through
+}

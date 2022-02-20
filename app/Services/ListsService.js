@@ -3,6 +3,7 @@ import { List } from "../Models/List.js";
 
 
 class ListsService {
+
   createList(newList) {
     const list = new List(newList)
     ProxyState.lists = [...ProxyState.lists, list]

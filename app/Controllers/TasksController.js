@@ -6,8 +6,9 @@ import { ProxyState } from "../AppState.js"
 export class TasksController {
 
   constructor() {
-    ProxyState.on('lists', saveState)
-    ProxyState.on('tasks', saveState)
+
+    ProxyState.on('lists', saveState);
+    ProxyState.on('tasks', saveState);
 
     loadState()
   }
@@ -17,21 +18,19 @@ export class TasksController {
 
     const newTask = {
       listId: listId,
+      checked: false,
       // @ts-ignore
-
       name: form.name.value
     }
-    console.log('TaskControl: create task.', newTask)
     tasksService.createTask(newTask)
   }
 
 
   async deleteTask(id) {
-    console.log('delete task', id);
-    tasksService.deleteTask(id)
-    if (await Pop.confirm()) {
+    const yes = await Pop.confirm('Remove task?')
+    if (yes) {
       tasksService.deleteTask(id)
     }
   }
-}
 
+}
