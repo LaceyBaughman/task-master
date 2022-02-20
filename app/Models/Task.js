@@ -13,23 +13,14 @@ export class Task {
   get TaskTemplate() {
     return `
     
-
-   
-     <label class="form-check-label" for="flexCheckChecked">${this.name} </label>
-    <i class="mdi mdi-delete selectable" title="delete ${this.name}" onclick="app.listsController.deleteTask('${this.id}')"></i>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+    ${this.name}
+    </label>
+    <i class="mdi mdi-delete selectable" title="delete ${this.name}" onclick="app.tasksController.deleteTask('${this.id}')"></i>
+  </div>
+  
   `
   }
 }
-
-
-/* <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-<label class="form-check-label" for="flexCheckChecked">${this.name} </label>
-<i class="mdi mdi-delete selectable" title="delete ${this.name}" onclick="app.ListsController.deleteTask('${this.id}')"></i> */
-
-
-
-// get Template() {
-//   return `<li class="d-flex justify-content-between">${this.name} <i class="mdi mdi-delete selectable" title="Delete ${this.name}" onclick="app.toppingsController.deleteTopping('${this.id}')"></i></li>`
-// }
-
-// }

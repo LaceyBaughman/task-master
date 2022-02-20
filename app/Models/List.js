@@ -26,17 +26,13 @@ export class List {
             <!-- SECTION Tasks List -->
             <div class="m-4">
 
-
-              <div class="form-check mx-4 justify-content-between" id=>
                 
-              ${this.TasksTemplate}
-
-              </div>
+              ${this.TaskTemplate}
 
             </div>
 
             <!-- SECTION TASKS FORM  -->
-            <form class="px-3 pb-2" onsubmit="app.tasksController.createTask()">
+            <form class="px-3 pb-2" onsubmit="app.tasksController.createTask('${this.id}')">
               <div class="input-group">
                 <input required minlength="3" maxlength="50" type="text" name="List Name" id="name" aria-describedby="helpId" class="form-control" placeholder="Add Task..." aria-label="Add Task">
                 <button class="btn btn-outline-secondary" id="button-addon2"><i
@@ -56,9 +52,7 @@ export class List {
     `
   }
 
-  // onsubmit="app.tasksController.createTask('${this.id}')"
-
-  get TasksTemplate() {
+  get TaskTemplate() {
     let template = ''
     const myTasks = ProxyState.tasks.filter(t => t.listId == this.id)
     myTasks.forEach(t => template += t.Template)

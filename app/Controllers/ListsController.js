@@ -6,7 +6,7 @@ function _drawList() {
   let template = ''
   const lists = ProxyState.lists
   lists.forEach(l => template += l.Template)
-  document.getElementById('list').innerHTML = template
+  document.getElementById('lists').innerHTML = template
 }
 export class ListsController {
   constructor() {
@@ -14,7 +14,6 @@ export class ListsController {
     ProxyState.on('tasks', _drawList)
     ProxyState.on('lists', saveState)
     ProxyState.on('tasks', saveState)
-    console.log('Lists controller loaded')
 
     loadState()
   }

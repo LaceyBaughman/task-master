@@ -1,5 +1,6 @@
 import { tasksService } from "../Services/TasksService.js"
 import { Pop } from "../Utils/Pop.js"
+import { loadState, saveState } from "../Utils/LocalStorage.js"
 
 export class TasksController {
   createTask(listId) {
@@ -9,18 +10,19 @@ export class TasksController {
     const newTask = {
       listId: listId,
       // @ts-ignore
+
       name: form.name.value
     }
-    console.log('TaskControl: create task.')
+    console.log('TaskControl: create task.', newTask)
     tasksService.createTask(newTask)
   }
 
 
-  async deleteTask(taskId) {
-    console.log('delete task', taskId);
-    tasksService.deleteTask(taskId)
+  async deleteTask(id) {
+    console.log('delete task', id);
+    tasksService.deleteTask(id)
     if (await Pop.confirm()) {
-      tasksService.deleteTask(taskId)
+      tasksService.deleteTask(id)
     }
   }
 }
