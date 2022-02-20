@@ -55,7 +55,7 @@ export class List {
   get TaskTemplate() {
     let template = ''
     const myTasks = ProxyState.tasks.filter(t => t.listId == this.id)
-    myTasks.forEach(t => template += t.Template)
+    myTasks.forEach(t => template += t.TaskTemplate)
     return template
 
   }
