@@ -14,14 +14,14 @@ export class Task {
   get TaskTemplate() {
     return `
     <div class="m-2">
-    <input onclick="app.tasksController.checkBox('${this.id}')" type="checkbox" id="${this.id}" name="${this.id}"
+    <h3><input onclick="app.tasksController.checkBox('${this.id}')" type="checkbox" id="${this.id}" name="${this.id}"
     ${this.checked ? 'checked' : ''}>
-    <label for="${this.id}" style="${this.checked ? 'text-decoration: line-through;'
+    <label class="mx-2" for="${this.id}" style="${this.checked ? 'text-decoration: line-through;'
         : ''
       }">${this.name}</label>
   
   <i class="mdi mdi-delete selectable" title="delete ${this.name}" onclick="app.tasksController.deleteTask('${this.id}')"></i>
-</div>
+  </h3></div>
     
    
   `

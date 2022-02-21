@@ -37,6 +37,7 @@ export class TasksController {
 
   checkBox(id) {
     tasksService.checkBox(id)
+    Pop.toast('Great Job!')
   }
 
 

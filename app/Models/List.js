@@ -16,11 +16,11 @@ export class List {
           <div class="rounded shadow bg-white">
 
             <div class="rounded-top text-center p-3" style="background-color:${this.color}">
-              <h1 class="m-4 justify-content-between">
+              <h2 class="m-4 justify-content-between">
                 ${this.name.toUpperCase()}
                 <i class="mdi mdi-delete selectable" title="delete task"
                   onclick="app.listsController.deleteList('${this.id}')"></i>
-              </h1>
+              </h2>
             </div>
 
             <!-- SECTION Tasks List -->

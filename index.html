@@ -6,8 +6,9 @@
   <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
     integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
   <!--Google-Fonts-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Pacifico&display=swap" rel="stylesheet">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,33 +43,38 @@
 
 </head>
 
-<body class="debug">
+<body>
 
   <header>
-    <nav class="navbar navbar-expand no-select">
-      <h1 class="my-3 text-center">Task Master</h1>
-    </nav>
+    <div class="container-fluid">
+      <div class="row px-5">
+        <h1 class="m-3 text-start">Task Master</h1>
+
+      </div>
+    </div>
   </header>
 
-  </header>
 
-
-  <main>
+  <main class="body-bg">
     <div class="container-fluid">
 
       <!-- SECTION Create List -->
-      <div class="row">
-        <form class="row align-items-start" onsubmit="app.listsController.createList()">
+      <div class="row row-list-create">
+        <form class="row align-items-start p-2" onsubmit="app.listsController.createList()">
           <div class="col-md-3 m-2">
             <input required minlength="3" maxlength="15" type="text" name="List Name" id="name"
               aria-describedby="helpId" class="form-control" placeholder="List Name...">
           </div>
-          <div class="col-md-3 m-2 d-flex">
-            <label for="" class="form-label m-2">Color</label><input required type="color" class="form-control m-2"
-              name="color" id="color" aria-describedby="helpId" placeholder="">
+          <div class="col-md-3 my-2 d-flex">
+            <label class="form-label m-2">
+              <h4>Choose A Color</h4>
+            </label><input required type="color" class="form-control color-picker m-2" name="color" id="color"
+              aria-describedby="helpId" value="#e66465">
+            </label>
           </div>
           <div class="col-md-2 m-2">
-            <button class="btn btn-success mx-2">Create</button>
+            <button class="bn632-hover bn27">Button</button>
+
           </div>
         </form>
       </div>

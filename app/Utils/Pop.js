@@ -20,8 +20,8 @@ export class Pop {
         text: text,
         icon: icon,
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
+        confirmButtonColor: '#005F73',
+        cancelButtonColor: '#0A9396',
         confirmButtonText: confirmButtonText
       })
       if (res.isConfirmed) {
@@ -53,6 +53,7 @@ export class Pop {
       toast: true,
       showConfirmButton: false
     })
+
   }
   /**
    * @param {Error | AxiosError} error Handles thrown errors and will unwrap Axios errors.
