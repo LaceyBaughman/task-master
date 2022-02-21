@@ -4,10 +4,14 @@ import { Task } from "../Models/Task.js"
 
 export function saveState() {
 
-  localStorage.setItem('TaskMaster', JSON.stringify({
-    lists: ProxyState.lists,
-    tasks: ProxyState.tasks,
-  }))
+  if (ProxyState.hasOwnProperty("tasks")) {
+    localStorage.setItem('TaskMaster', JSON.stringify({
+      lists: ProxyState.lists,
+      tasks: ProxyState["tasks"]
+    }));
+    return
+  }
+  localStorage.setItem("TaskMaster", JSON.stringify({ lists: ProxyState.lists }));
 }
 
 export function loadState() {

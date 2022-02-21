@@ -3,6 +3,8 @@ import { Pop } from "../Utils/Pop.js"
 import { loadState, saveState } from "../Utils/LocalStorage.js"
 import { ProxyState } from "../AppState.js"
 
+
+
 export class TasksController {
 
   constructor() {
@@ -32,5 +34,10 @@ export class TasksController {
       tasksService.deleteTask(id)
     }
   }
+
+  checkBox(id) {
+    tasksService.checkBox(id)
+  }
+
 
 }

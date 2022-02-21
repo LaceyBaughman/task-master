@@ -24,7 +24,7 @@ export class List {
             </div>
 
             <!-- SECTION Tasks List -->
-            <div class="m-4">
+            <div class="m-4" id="task">
 
                 
               ${this.TaskTemplate}
