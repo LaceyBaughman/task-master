@@ -5,11 +5,6 @@ import { saveState } from "../Utils/LocalStorage.js"
 
 
 class TasksService {
-
-  deleteTask(id) {
-    ProxyState.tasks = ProxyState.tasks.filter(t => t.id != id)
-  }
-
   createTask(newTask) {
     const task = new Task(newTask)
     ProxyState.tasks = [...ProxyState.tasks, task]
@@ -22,9 +17,10 @@ class TasksService {
     ProxyState.tasks = ProxyState.tasks
     saveState()
   }
+  deleteTask(id) {
+    ProxyState.tasks = ProxyState.tasks.filter(t => t.id != id)
+  }
 }
-
-
 
 export const tasksService = new TasksService()
 

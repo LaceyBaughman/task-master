@@ -3,18 +3,14 @@ import { ProxyState } from "../AppState.js"
 
 export class List {
   constructor(data) {
-
     this.id = data.id || generateId()
     this.name = data.name
     this.color = data.color
   }
-
-
   get Template() {
     return `
     <div class="col-md-4 p-3 card-height">
           <div class="rounded shadow bg-white">
-
             <div class="rounded-top text-center p-3" style="background-color:${this.color}">
               <h2 class="m-4 justify-content-between">
                 ${this.name.toUpperCase()}
@@ -25,10 +21,7 @@ export class List {
 
             <!-- SECTION Tasks List -->
             <div class="m-4" id="task">
-
-                
               ${this.TaskTemplate}
-
             </div>
 
             <!-- SECTION TASKS FORM  -->
@@ -39,16 +32,8 @@ export class List {
                     class="mdi mdi-plus" ></i></button>
               </div>
             </form>
-
-
-
-
-
-
-
           </div>
         </div>
-      
     `
   }
 
@@ -57,6 +42,5 @@ export class List {
     const myTasks = ProxyState.tasks.filter(t => t.listId == this.id)
     myTasks.forEach(t => template += t.TaskTemplate)
     return template
-
   }
 }

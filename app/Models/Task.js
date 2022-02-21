@@ -22,8 +22,6 @@ export class Task {
   
   <i class="mdi mdi-delete selectable" title="delete ${this.name}" onclick="app.tasksController.deleteTask('${this.id}')"></i>
   </h3></div>
-    
-   
   `
   }
 }

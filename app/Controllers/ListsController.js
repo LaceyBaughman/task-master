@@ -9,18 +9,14 @@ function _drawList() {
   lists.forEach(l => template += l.Template)
   document.getElementById('lists').innerHTML = template
 }
-
-
 export class ListsController {
   constructor() {
     ProxyState.on('lists', _drawList)
     ProxyState.on('tasks', _drawList)
     ProxyState.on('lists', saveState)
     ProxyState.on('tasks', saveState)
-
     loadState()
   }
-
   createList() {
     window.event.preventDefault()
     const form = window.event.target
@@ -33,12 +29,10 @@ export class ListsController {
     }
     listsService.createList(newList)
   }
-
   async deleteList(id) {
     const yes = await Pop.confirm('Remove list?')
     if (yes) {
       listsService.deleteList(id)
     }
-
   }
 }

@@ -4,14 +4,10 @@ import { loadState, saveState } from "../Utils/LocalStorage.js"
 import { ProxyState } from "../AppState.js"
 
 
-
 export class TasksController {
-
   constructor() {
-
     ProxyState.on('lists', saveState);
     ProxyState.on('tasks', saveState);
-
     loadState()
   }
   createTask(listId) {
@@ -26,19 +22,14 @@ export class TasksController {
     }
     tasksService.createTask(newTask)
   }
-
-
+  checkBox(id) {
+    tasksService.checkBox(id)
+    Pop.toast('Great Job!')
+  }
   async deleteTask(id) {
     const yes = await Pop.confirm('Remove task?')
     if (yes) {
       tasksService.deleteTask(id)
     }
   }
-
-  checkBox(id) {
-    tasksService.checkBox(id)
-    Pop.toast('Great Job!')
-  }
-
-
 }
